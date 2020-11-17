@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Евгений, прошу проверить данную работу не только на предмет синтаксиса, 
+        но и на предмет соответствия заданным в дз параметрам. Ведь синтаксически 
+        я могла сделать верно, и даже выглядеть форма может правильно, а по факту 
+        не будет соответствовать заданию. Хочу понимать свои ошибки. Спасибо-->
+    <h1 align="center">Заполните анкету</h1>
+    <fieldset>
+        <legend>Личные данные</legend>
+        <form name="user_data" method="POST" action="http://fe.it-academy.by/TestForm.php">
+            <input type="text" name="text_1" maxlength="25" pattern='[А-Яа-я]' placeholder="Фамилия" required autofocus><br> 
+            <input type="text" name="text_2" maxlength="20" pattern='[А-Яа-я]' placeholder="Имя" required><br> 
+            <input type="text" name="text_3" maxlength="24" pattern='[А-Яа-я]' placeholder="Отчество" required> 
+        </form >
+        <fieldset>
+            <legend>Паспортные данные</legend>
+            <form name="user_passport" method="POST" action="http://fe.it-academy.by/TestForm.php">
+                <input type="text" name="text_4" size="5" maxlength="2" pattern='[A-Z]{1.2}' required placeholder="AA"> 
+                <input type="text" name="text_5" size="10" maxlength="7" pattern='[0-9]{5.}' required placeholder="1234567"><br> 
+                
+            </form >
+        </fieldset>
+        <fieldset>
+            <legend>Дата рождения</legend>
+            <form name="date" method="get" action="http://fe.it-academy.by/TestForm.php">
+                <p><input type="text" name="text_6" size="6" maxlength="4" pattern='[0-9]{4.}'  placeholder="2020"><br>
+                <select type="list" id="list">
+                    <option value="1">Январь</option>
+                    <option value="2">Февраль</option>
+                    <option value="3">Март</option>
+                    <option value="4">Апрель</option>
+                    <option value="5">Май</option>
+                    <option value="6">Июнь</option>
+                    <option value="7">Июль</option>
+                    <option value="8">Август</option>
+                    <option value="9">Сентябрь</option>
+                    <option value="10">Октябрь</option>
+                    <option value="11">Ноябрь</option>
+                    <option value="12">Декабрь</option>
+                </select> <br> 
+                <input type="text" name="text_7" size="6" pattern='[1-31] step="1"'></p>
+            </form >
+        </fieldset>
+        <form name="date" method="get" action="http://fe.it-academy.by/TestForm.php">
+            <select type="list" id="list1">
+                    <option value="13">РБ</option>
+                    <option value="14">РФ</option>
+            </select>
+            <p>Адрес<br>
+            <textarea name="textarea1 lang="ru"></textarea></p>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Интересы</legend>
+             <fieldset>
+                <legend>Хобби</legend>
+                <form name="text" method="get" action="http://fe.it-academy.by/TestForm.php">
+                
+                <label><input type="checkbox" name="hobby[]">Рыбалка</label><br>
+                <label><input type="checkbox" name="hobby[]">Астрономия</label><br>
+                <label><input type="checkbox" name="hobby[]">Дайвинг</label><br>
+                <label><input type="checkbox" name="hobby[]">Марки</label>
+                </form>
+             </fieldset>
+             
+             <fieldset>
+                <legend>Домашние животные</legend>
+                <form name="text" method="get" action="http://fe.it-academy.by/TestForm.php">
+                <select name="list[]" id="list1" size="8" multiple>
+                    <option value="0" selected>Попугаи</option>
+                    <option value="1">Волнистый</option>
+                    <option value="2">Ара</option>
+                    <option value="3">Неразлучник</option>
+                    <option value="0" selected>Рыба</option>
+                    <option value="4">Караси</option>
+                    <option value="5">Окуни</option>
+                    <option value="6">Осетр</option>
+                    <option value="0" selected>Птицы</option>
+                    <option value="4">Ворона</option>
+                    <option value="5">Аист</option>
+                    <option value="6">Археопетрикс</option>
+                </select>
+                </form>
+             </fieldset>
+    </fieldset>
+    <fieldset>
+        <legend>Данные для входа и восстановления попроля</legend>
+        <form name="text" method="POST" action="http://fe.it-academy.by/TestForm.php" autocomplete="on">
+            <p><input type="text" id="login" name="login" placeholder="Логин" maxlength="20" pattern='{5.}' required><br>
+            <input type="text" id="pass" name="password" placeholder="Пароль" maxlength="20" pattern='{10.}'required></p>   
+        </form>
+     </fieldset>
+     
+     <fieldset>
+        <legend>Координаты</legend>
+        <form name="text" method="POST" action="http://fe.it-academy.by/TestForm.php">
+        <p><input type="email" placeholder="Введите адрес электронной почты" size="35"><br>
+        <input type="url" placeholder="Введите адрес сайта" size="35"></p>
+        </form>
+     </fieldset>
+    <fieldset>
+        <legend>Цифры</legend>
+        <form name="text" method="GET" action="http://fe.it-academy.by/TestForm.php">
+            <p><input type="range" min="0" max="10" step="0,1">
+            </p>
+<!--как задать тайпу range диапазон -2,5 / 2,5?-->
+    </fieldset>
+    <fieldset>
+        <legend>Кнопки управления</legend>
+        <form name="text" method="get" action="http://fe.it-academy.by/TestForm.php">
+            <p><input type="submit" value="Отправить">
+            <input type="reset" placeholder="Сбросить"></p>
+            <p><input type="image" src="email (1).jpg"></p>
+            
+            </form>   
+    </fieldset>
+    
+</body>
+</html>

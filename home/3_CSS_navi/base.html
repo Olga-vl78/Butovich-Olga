@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+       
+       
+       
+        div.menuLevel1
+        {
+         display: flex;
+         flex-direction: row;   
+        }
+        div.menuLevel1>div, div.menuLevel2>div
+        {
+            width: 100px; height: 20px;
+            background-color: rgb(192, 186, 186);
+            border:solid 2px;
+            border-radius: 5px;  
+        }
+        div.menuLevel1>div
+        {
+            cursor: pointer;
+        }
+        div.menuLevel2>div
+        {
+            display: none;
+            cursor: pointer;
+        }
+        div.menuLevel1>div:hover div.menuLevel2>div
+        { 
+        display: block;
+        
+        }
+        div.menuLevel1>div:hover
+        {
+            background-color: rgb(240, 230, 230);
+        }
+        div.menuLevel2>div:hover
+        {
+            background-color: rgb(240, 230, 230);
+        }
+        
+        @media all and (max-device-width: 650px)
+        {
+        div.menuLevel1
+            {
+            display: unset;
+            } 
+        div.menuLevel1>div:hover div.menuLevel2
+            {
+                display: block; position:absolute; left: 18%; top: 12%;
+            }
+        }    
+       
+    
+    </style>
+
+</head>
+<body>
+<div class="menuLevel1">
+    
+    <div>Понедельник</div>
+    <div>Вторник</div>
+    <div>Среда
+        <div class="menuLevel2">
+            <div>Завтрак</div>
+            <div>Обед</div>
+            <div>Ужин</div>
+        </div>
+    </div>
+    <div>Четверг</div>
+    <div>Пятница</div>
+    <div>Суббота</div>
+</div>
+
+</body>
+</html>
